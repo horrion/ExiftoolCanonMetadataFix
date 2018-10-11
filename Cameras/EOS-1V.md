@@ -58,9 +58,11 @@ First you want to write the LensID to your file. Specify a **zoom range** for th
 
 `exiftool -LensID="LensIdVal" -if '$FocalLength# >= "lowVal" && $FocalLength# <= "upperVal"' dir`
 
+
 For a **prime lens**, replace **LensIdVal** with your LensID value and **FlVal** with the FocalLength value the following command: 
 
 `exiftool -LensID="LensIdVal" -if '$FocalLength# == "lowVal"' dir`
+
 
 Replace **lensStringVal**, **lensInfoVal**, **lensModVal**, **serialNumberVal**, and **LensIdVal** with your own values. 
 
@@ -72,13 +74,16 @@ Write missing LensID to file
 
 `exiftool -LensID="751" -if '$FocalLength# >= "16" && $FocalLength# <= "35"' dir`
 
+
 Write remaining missing info to 1V files
 
 `exiftool -Lens="EF16-35mm f/2.8L III USM" -LensInfo="16-35mm f/0" -LensModel="EF16-35mm f/2.8L III USM" -LensSerialNumber="insert your Serial number here" -if '$LensID# eq "751"' dir`
 
+
 Check that they're correctly written to file
 
 `exiftool -LensID -LensInfo -LensModel -LensSerialNumber -if '$LensID# eq "751"' dir`
+
 
 Check all other files 
 
@@ -91,13 +96,16 @@ Write missing LensID to file
 
 `exiftool -LensID="747" -if '$FocalLength# >= "100" && $FocalLength# <= "400"' dir`
 
+
 Write remaining missing info to 1V files
 
 `exiftool -Lens="EF100-400mm f/4.5-5.6L IS II USM" -LensInfo="100-400mm f/?" -LensModel="EF100-400mm f/4.5-5.6L IS II USM" -LensSerialNumber="insert your Serial number here" -if '$LensID# eq "747"' dir`
 
+
 Check that they're correctly written to file
 
 `exiftool -LensID -LensInfo -LensModel -LensSerialNumber -if '$LensID# eq "747"' dir`
+
 
 Check all other files 
 
@@ -109,13 +117,16 @@ Write missing LensID to file
 
 `exiftool -LensID="748" -if '$FocalLength# >= "401" && $FocalLength# <= "560"' dir`
 
+
 Write remaining missing info to 1V files
 
 `exiftool -Lens="EF100-400mm f/4.5-5.6L IS II USM +1.4x III" -LensInfo="140-560mm f/?" -LensModel="EF100-400mm f/4.5-5.6L IS II USM +1.4x III" -LensSerialNumber="insert your Serial number here" -if '$LensID# eq "748"' dir`
 
+
 Check that they're correctly written to file
 
 `exiftool -LensID -LensInfo -LensModel -LensSerialNumber -if '$LensID# eq "748"' dir`
+
 
 Check all other files 
 
